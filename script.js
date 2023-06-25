@@ -94,7 +94,7 @@ submitBtn.addEventListener("click", () => {
     let axiosPostSet = [];
 
     //If GHL Authorization Key Is Available
-    if (config.Authorization) {
+    if (config.Authorization != "") {
       axiosPostSet = [postToAI, postToGHL];
     } else {
       axiosPostSet = [postToAI];

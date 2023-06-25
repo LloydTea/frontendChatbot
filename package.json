@@ -6,7 +6,8 @@
   "main": "scripts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development --watch"
+    "start": "webpack --watch --config webpack.config.js",
+    "deploy": "netlify deploy --prod"
   },
   "keywords": [],
   "author": "",

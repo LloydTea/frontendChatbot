@@ -69,7 +69,6 @@ submitBtn.addEventListener("click", () => {
       injurytype: injurytype.value,
       injuryprocess: injuryprocess.value.trim(),
       postinjury: postinjury.value.trim(),
-      sessionId: localStorage.sessionKey,
     };
     const data2 = {
       name: name.value,
@@ -122,36 +121,15 @@ submitBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", activateStep2);
 
-const generateToken = () => {
-  axios
-    .get(`${config.BASEURl}:${config.PORT}/generate-session`)
-    .then((response) => {
-      // Extract the session key from the response data
-      const sessionKey = response.data.sessionKey;
-
-      localStorage.setItem("sessionKey", sessionKey);
-      // Store the session key on the client-side (e.g., in local storage or a cookie)
-    })
-    .catch((error) => {
-      console.error("Error fetching session key:", error);
-    });
-};
-
 const messageHandler = async () => {
   if (message.value != "") {
-    //check if local storage has sessionKey.
-    if (!localStorage.getItem("sessionKey")) {
-      await generateToken();
-    }
-
     const data = {
       message: message.value.trim(),
-      sessionId: localStorage.sessionKey,
     };
     userMessage(message.value);
     try {
       axios
-        .post(`${config.BASEURL}:${config.PORT}/send`, data, {
+        .post(`${config.BASEURL}/send`, data, {
           headers: {
             "Content-Type": "application/json",
           },

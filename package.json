@@ -1,0 +1,33 @@
+{
+  "name": "webpage",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
+    "grunt-cli": "^1.4.3",
+    "pm2": "^5.3.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "babel-loader": "^9.1.2",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.3"
+  }
+}

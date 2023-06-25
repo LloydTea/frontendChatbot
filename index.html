@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/styles.css">
+    <script src="./build/vendor.js"></script>
+    <title>Personal Injury Qualifier</title>
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 p-3 vh-100">
+                <div class="bg-white p-3 rounded-top h-75">
+                    <div id="chatbox" class="bg-dark h-100 rounded-top m-1 p-2 overflow-scroll overflow-x-hidden">
+                    </div>
+                </div>
+                <div class="input-group bg-white p-3 rounded-bottom border-top">
+                    <div class="form-floating">
+                        <textarea id="message" class="form-control" placeholder="Leave a comment here" style="max-height: 200px"></textarea>
+                        <label for="message">Type your message here..</label>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="sendmessage">Send <i class="bi bi-send"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade"  data-bs-backdrop="static" tabindex="-1" id="injuryForm">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="p-3 border-bottom">
+                  <p class="fs-5 fw-bolder text-center mb-0">Answer 3 Questions & Our AI Will Tell You <br>
+                    If You Could be Owed Compensation</p>
+                    <p class="fs-6 mb-0 text-center">Get an Instant Online Decision Without Speaking <br>to Someone on The Phone</p>
+                </div>
+                <div class="modal-body">
+                    <div class="mx-2" id="step1">
+                        <p class="fs-6 fw-bolder text-decoration-underline">Personal Information:</p>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Jane Doe" required>
+                            <label for="name">Full Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                            <label for="email">Email address</label>
+                        </div>
+                        <span class="d-none" id="stepOneMessage"></span>
+                    </div>
+                    <div class="mx-2 d-none" id="step2">
+                        <p class="fs-6 fw-bolder text-decoration-underline">Injury Information:</p>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="injurytype" aria-label="What type of injury have you experienced?" required>
+                                <option selected>Open this select menu</option>
+                                <option value="Car Crash">Car Crash</option>
+                                <option value="Accident at work">Accident at work</option>
+                                <option value="Accident in a public place">Accident in a public place</option>
+                                <option value="Violent Attack">Violent Attack</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="injurytype">What type of injury have you experienced?</label>
+                        </div>
+                        <div class="mb-4">
+                            <label class="fw-bolder pb-2" for="injuryprocess" style="font-size: 13px;">In as much detail please explain your injury and how it happened </label>
+                            <textarea class="form-control" minlength="200" placeholder="Example: I Injured myself at work when a heavy box from a shelf landed on my head & caused me to sustain a concussion." id="injuryprocess" style="min-height: 100px; font-size:13px" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="fw-bolder pb-2" for="postinjury" style="font-size: 13px;">In as much detail please explain what happened to you after the injury (medical expenses, medical treatment, your quality of life) *</label>
+                            <textarea class="form-control" minlength="200" placeholder="Example: I was rushed to ED to receive immediate treatment. I was unable to work for 12 weeks and have lost my job." id="postinjury" style="min-height: 100px; font-size:13px" required></textarea>
+                        </div>
+                        <span  class="d-none" id="stepTwoMessage"></span>
+                    </div>
+                </div>
+                <div class="modal-footer  justify-content-between">
+
+                    <button type="button" class="btn btn-primary mx-2 d-none" id="previous"><i class="bi bi-arrow-left-circle"></i> Previous</button>
+                    <button type="button" class="btn btn-warning mx-2" id="next">Next <i class="bi bi-arrow-right-circle"></i></button>
+                    <button type="button" class="btn btn-warning mx-2 d-none" id="submit"  data-bs-dismiss="modal">Get Instant Decision <i class="bi bi-arrow-right-circle"></i></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="loading" aria-hidden="true" aria-labelledby="AI Generating Report..." tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+
+                <div class="p-3 border-bottom">
+                    <p class="fs-5 fw-bolder text-center mb-0">AI Generating Report...</p>
+                  </div>
+                <div class="modal-body">
+                    <p class="text-center">
+                        <img src="./loading.gif" class="w-75 mx-auto"  /></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script  type="text/javascript" src="./build/bundle.js"></script>
+</body>
+</html>

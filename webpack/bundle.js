@@ -26,7 +26,7 @@ eval("// Axios v1.4.0 Copyright (c) 2023 Matt Zabriskie and contributors\n\n\nfu
   \*******************/
 /***/ ((module) => {
 
-eval("module.exports = {\n  BASEURL: \"https://backendchatbot.netlify.app\",\n  DEBUG_MODE: true,\n  Authorization: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6ImdFZVY0dm1tbG9NQWJKNTNrZ1gzIiwiY29tcGFueV9pZCI6IkVOclY2aXpENjYxS0RMVnpZQ3hWIiwidmVyc2lvbiI6MSwiaWF0IjoxNjcyMzYzMDg0NDA0LCJzdWIiOiJ1c2VyX2lkIn0.eBnGZf3lai5bfQSDj8KWt58S7-2gd35Kx9LSpSPItZI\"\n};\n\n//# sourceURL=webpack://webpage/./config.js?");
+eval("module.exports = {\n  BASEURL: \"https://backendchatbot.netlify.app\",\n  DEBUG_MODE: true\n  // Authorization: \"\",\n};\n\n//# sourceURL=webpack://webpage/./config.js?");
 
 /***/ }),
 

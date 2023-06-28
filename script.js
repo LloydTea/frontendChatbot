@@ -81,6 +81,8 @@ submitBtn.addEventListener("click", () => {
         "Content-Type": "application/json",
       },
     });
+
+    //GHL Axios Post Request
     const postToGHL = axios.post(
       `https://rest.gohighlevel.com/v1/contacts/`,
       data2,
@@ -94,7 +96,7 @@ submitBtn.addEventListener("click", () => {
     let axiosPostSet = [];
 
     //If GHL Authorization Key Is Available
-    if (config.Authorization != "") {
+    if (config.Authorization) {
       axiosPostSet = [postToAI, postToGHL];
     } else {
       axiosPostSet = [postToAI];

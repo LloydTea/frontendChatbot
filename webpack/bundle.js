@@ -26,7 +26,7 @@ eval("// Axios v1.4.0 Copyright (c) 2023 Matt Zabriskie and contributors\n\n\nfu
   \*******************/
 /***/ ((module) => {
 
-eval("module.exports = {\n  BASEURL: \"https://backendchatbot.netlify.app\",\n  DEBUG_MODE: true\n  // Authorization: \"\",\n};\n\n//# sourceURL=webpack://webpage/./config.js?");
+eval("module.exports = {\n  BASEURL: \"https://ck3fqvdd7j.execute-api.eu-central-1.amazonaws.com/dev/\",\n  DEBUG_MODE: true\n  // Authorization: \"\",\n};\n\n//# sourceURL=webpack://webpage/./config.js?");
 
 /***/ }),
 

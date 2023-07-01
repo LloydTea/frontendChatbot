@@ -76,44 +76,11 @@ submitBtn.addEventListener("click", () => {
       phone: phone.value,
     };
 
-    const postToAI = axios.post(`${config.BASEURL}/report`, data1, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    //Call Send Entry Data To AI To Initiate The Chat
+    formEntryToAI(data1);
 
     //GHL Axios Post Request
-    const postToGHL = axios.post(
-      `https://rest.gohighlevel.com/v1/contacts/`,
-      data2,
-      {
-        headers: {
-          Authorization: `Bearer ${config.Authorization}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    let axiosPostSet = [];
-
-    //If GHL Authorization Key Is Available
-    if (config.Authorization) {
-      axiosPostSet = [postToAI, postToGHL];
-    } else {
-      axiosPostSet = [postToAI];
-    }
-    try {
-      axios.all(axiosPostSet).then(
-        axios.spread((reponseFromAI, responseFromGHL) => {
-          const messageFromAi = reponseFromAI?.data?.message;
-          AiMessage(messageFromAi);
-
-          const messageFromGHL = responseFromGHL?.status;
-          if (messageFromGHL == "200") console.log("Contact Saved to GHL");
-        })
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    formEntryToGHL(data2);
   } else {
     setpTwoError.classList.remove("d-none");
     setpTwoError.classList.add("text-danger");
@@ -122,6 +89,46 @@ submitBtn.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", activateStep2);
+
+//Function For Sending All User Entry To AI
+const formEntryToAI = async (userInfo) => {
+  try {
+    axios
+      .post(`${config.BASEURL}/report`, userInfo, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(function (response) {
+        const messageFromAi = response?.data?.message;
+        AiMessage(messageFromAi);
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//Function To Send User Details To GHL CRM
+const formEntryToGHL = async (userInfo) => {
+  if (config.Authorization) {
+    try {
+      axios
+        .post(`https://rest.gohighlevel.com/v1/contacts/`, userInfo, {
+          headers: {
+            Authorization: `Bearer ${config.Authorization}`,
+            "Content-Type": "application/json",
+          },
+        })
+        .then(function () {
+          console.log("Contact Saved");
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    console.log("No GHL Authorization Code");
+  }
+};
 
 const messageHandler = async () => {
   if (message.value != "") {

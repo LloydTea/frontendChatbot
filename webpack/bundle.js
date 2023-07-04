@@ -26,7 +26,7 @@ eval("// Axios v1.4.0 Copyright (c) 2023 Matt Zabriskie and contributors\n\n\nfu
   \*******************/
 /***/ ((module) => {
 
-eval("module.exports = {\n  BASEURL: \"https://ck3fqvdd7j.execute-api.eu-central-1.amazonaws.com/dev\",\n  DEBUG_MODE: true,\n  Authorization: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6Ikx5M2JHajNBUEtFRm9rMXplVE5lIiwiY29tcGFueV9pZCI6IkVOclY2aXpENjYxS0RMVnpZQ3hWIiwidmVyc2lvbiI6MSwiaWF0IjoxNjg0MzU0MDA1NDEzLCJzdWIiOiJ1c2VyX2lkIn0.1ZPbrEhMMu_ocaDRRqMA3QV0AalSSDZ41-kcgScEqLM\"\n};\n\n//# sourceURL=webpack://webpage/./config.js?");
+eval("module.exports = {\n  BASEURL: \"https://i8z09jhxxh.execute-api.eu-central-1.amazonaws.com/Prod\",\n  DEBUG_MODE: true,\n  Authorization: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6Ikx5M2JHajNBUEtFRm9rMXplVE5lIiwiY29tcGFueV9pZCI6IkVOclY2aXpENjYxS0RMVnpZQ3hWIiwidmVyc2lvbiI6MSwiaWF0IjoxNjg0MzU0MDA1NDEzLCJzdWIiOiJ1c2VyX2lkIn0.1ZPbrEhMMu_ocaDRRqMA3QV0AalSSDZ41-kcgScEqLM\"\n};\n\n//# sourceURL=webpack://webpage/./config.js?");
 
 /***/ }),
 

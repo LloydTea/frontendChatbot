@@ -74,6 +74,7 @@ submitBtn.addEventListener("click", () => {
       name: name.value,
       email: email.value,
       phone: phone.value,
+      tags: ["ai.615nashlaw.com"],
     };
 
     //Call Send Entry Data To AI To Initiate The Chat

@@ -2,4 +2,6 @@ node_modules/
 src/
 config.js
 # Local Netlify folder
-.netlify
+.netlify/
+
+
